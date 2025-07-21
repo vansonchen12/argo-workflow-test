@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argo-workflow-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: argo-workflow-test
+  template:
+    metadata:
+      labels:
+        app: argo-workflow-test
+    spec:
+      containers:
+        - name: app
+          image: gcr.io/vanson-test/argo-workflow-test:latest
+          ports:
+            - containerPort: 8080
+
