@@ -30,7 +30,7 @@ spec:
             chmod +x /scripts/docker_cloud.sh &&
             /scripts/docker_cloud.sh
         volumes:
-          - name: build-script
+          - name: build-script 
             configMap:
               name: build-script
     - name: build-image
