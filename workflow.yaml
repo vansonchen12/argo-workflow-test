@@ -29,6 +29,7 @@ spec:
           - |
             git clone https://github.com/vansonchen12/argo-workflow-test.git /workspace &&
             cd /workspace &&
+            ls &&
             bash ./deploy/docker_cloud.sh
         volumeMounts:
           - name: workspace
