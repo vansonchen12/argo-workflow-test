@@ -29,10 +29,10 @@ spec:
           - |
             chmod +x /scripts/docker_cloud.sh &&
             /scripts/docker_cloud.sh
-        volumes:
-          - name: build-script 
-            configMap:
-              name: build-script
+        volumeMounts:
+         - name: build-script
+           mountPath: /scripts
+
     - name: build-image
       inputs:
         parameters:
@@ -54,6 +54,6 @@ spec:
   volumes:
     - name: workspace
       emptyDir: {}
-    - name: build-script
+    - name: build-script 
       configMap:
         name: build-script
